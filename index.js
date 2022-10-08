@@ -20,6 +20,10 @@ app.use(cors());
 
 app.use('/posts',postRoutes)
 
+app.get("/",( req, res)=> {
+    res.send("Hello to MEMORIESS..")
+})
+
 // const CONNECTION_URL = 'mongodb+srv://ahsan:ahsan12345@cluster0.lrptc.mongodb.net/?retryWrites=true&w=majority'
 
 //  https://cloud.mongodb.com/atlas
