@@ -1,0 +1,11 @@
+npm init -y 
+
+install body-parser cors express mongoose nodemon
+
+in package.json
+"scripts": {
+    "start":"nodemon index.js"
+  },
+
+in main object,
+"type": "module",
