@@ -10,11 +10,11 @@ export const signin = async (req,res) =>{
     try {
          const existingUser = await User.findOne({email});
 
-         if(!existingUser) return res.status(404).json({message: 'User does not exist !'})
+         if(!existingUser) return res.status(404).json({message: 'User does not exist!'})
 
          const isPasswordCorrect = await bcrypt.compare(password, existingUser.password)
 
-         if(!isPasswordCorrect) return res.status(400).json({message: 'Invalid Credential !'})
+         if(!isPasswordCorrect) return res.status(400).json({message: 'Invalid Credential!'})
 
          const token = Jwt.sign({email:existingUser.email, id:existingUser._id}, 'test', {expiresIn:'1h'});
 
@@ -32,9 +32,9 @@ export const signup = async (req,res) =>{
     try {
          const existingUser = await User.findOne({email});
 
-         if(existingUser) return res.status(400).json({message: 'User already exist !'})
+         if(existingUser) return res.status(400).json({message: 'User already exist!'})
 
-         if(password !== confirmPassword) return res.status(400).json({message: "Password doesn't match !"})
+         if(password !== confirmPassword) return res.status(400).json({message: "Password doesn't match!"})
 
          const hashedPassword  = await bcrypt.hash(password, 12)
 
