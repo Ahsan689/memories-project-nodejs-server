@@ -8,4 +8,9 @@ in package.json
   },
 
 in main object,
-"type": "module",
+"type": "module", to use import instead of require.
+
+-------------------- VERY IMPORTANT ---------------
+We have exported "app" in index.js file. to overcome these error in vercel,
+No exports found in module "../index.js"
+Did you forget to export a function or a server?
